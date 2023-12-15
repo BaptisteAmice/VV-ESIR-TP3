@@ -7,7 +7,6 @@ public class StringUtils {
     private StringUtils() {}
 
     public static boolean isBalanced(String str) {
-
         Stack<Character> stack = new Stack<>();
         for (char c : str.toCharArray()) {
             if (c == '(' || c == '[' || c == '{') {
@@ -21,11 +20,9 @@ public class StringUtils {
                     stack.pop();
                 }else{
                     return false;
-                }
-                   
+                }    
             }
         }
         return stack.isEmpty();  
     }
-
 }

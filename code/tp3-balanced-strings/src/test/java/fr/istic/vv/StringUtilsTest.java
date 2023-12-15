@@ -5,31 +5,80 @@ import org.junit.jupiter.api.Test;
 import static fr.istic.vv.StringUtils.isBalanced;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 class StringUtilsTest {
 
-    // La chaine peut être vide => vrai
+    /******************** Input Space Partitioning ********************/
+
+    /****Tests Q1 ****/
+
+    // A : pas de contenu textuel supplementaire => vrai
+    @Test
+    void testNoText() {
+        assertTrue(isBalanced("({}[])"));
+    }
+
+    // B : contenu textuel supplementaire symetrique => vrai
+    @Test
+    void testSymetricText() {
+        assertTrue(isBalanced("(a(b(c)d)e)"));
+    }
+
+    // C : contenu textuel supplementaire non symetrique => vrai
+    @Test
+    void testNonSymetricText() {
+        assertTrue(isBalanced("(a(b(c)))"));
+    }
+
+    /****Tests Q2 ****/
+    // A : chaine vide => vrai 
     @Test
     void testEmptyString() {
         assertTrue(isBalanced(""));
     }
 
-    // Fermetures correspondantes aux ouvertures => vrai
+    // B : une ouverture par fermeture => vrai
     @Test
-    void testBalancedString() {
-        assertTrue(isBalanced("({[]})"));
+    void testOneOpenClose() {
+        assertTrue(isBalanced("(()(())())"));
     }
 
-    // Fermetures non correspondantes aux ouvertures par nombre d'apparition => faux
+    //C : moins d'une fermeture par ouverture => faux
     @Test
-    void testUnbalancedString() {
-        assertFalse(isBalanced("(()"));
+    void testLessCloseThanOpen() {
+        assertFalse(isBalanced("(()(())("));
     }
 
-    // Fermerture non correspondante par ordre d'apparition => faux
+    /****Tests Q3 ****/
+
+    // A => impossible
+
+    // B => ordre fermeture/ouverture respecte => vrai
     @Test
-    void testUnbalancedString2() {
+    void testOrderRespected() {
+        assertTrue(isBalanced("([]{}[{}()])"));
+    }
+
+    // C => ordre fermeture/ouverture non respecte => faux
+    @Test
+    void testOrderNotRespected() {
         assertFalse(isBalanced("([)]"));
     }
 
 
+    /******************** Test coverage ********************/
+
+    // Input Space Partitioningis sufficient to cover all the code
+
+    /******************** Logic test ********************/
+
+    @Test 
+    void testBranchCoverageBrackets() {
+        assertFalse(isBalanced("(]"));
+    }
+
+    @Test 
+    void testBranchCoverageBraces() {
+        assertFalse(isBalanced("(}"));
+    }
 }

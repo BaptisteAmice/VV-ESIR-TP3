@@ -26,3 +26,42 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. Use input space partitioning
+
+In order to select a good test set, we used the input space partitioning method.
+We devided the input space in 3 characteristics and 3 blocks, as follows:
+
+|Characteristics    |   |Blocks |       |       |
+|-------------------|:--|:------|:------|:------|
+|                   |   |a      |b      |c      |
+|q1                 | Additional text content |  non   |  symetric   |  asymmetric   |
+|q2                 | Number of closures per opening |  0   |  1   |  <1   |
+|q3                 | Order of closures/order of openings |  NA   |  equivalent   |  different   |
+
+
+THen we created our tests by following the above table.
+
+2.
+
+In order to evaluate the statement coverage we added jacoco to the pom.xml file.
+Then we did a mvn install and mvn jacoco:report.
+
+
+In order to evaluate the statement coverage we added jacoco to the pom.xml file.
+Then we did a mvn install and mvn jacoco:report.
+
+We saw in the report that the statement coverage was 100%, so we didn't need to add any new test cases for the coverage.
+
+3.
+If we look in the jacoco report, the coverage is of 92% for the branches (with 2 missed branches).
+We added two new cases in the test class in order to cover the missed branches.
+We have now covered every value for the variable c, which is the only one in statements with more than 2 boolean operators.
+
+We now have a 100% coverage for the branches (all other branches were already covered by the previous tests because we only have one variable at the origin of the branches).
+
+4.
+
+
+mvn org.pitest:pitest-maven:mutationCoverage
+
+
