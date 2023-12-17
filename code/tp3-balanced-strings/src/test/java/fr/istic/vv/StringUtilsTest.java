@@ -12,38 +12,38 @@ class StringUtilsTest {
 
     /****Tests Q1 ****/
 
-    // A : pas de contenu textuel supplementaire => vrai
+    // B1 : pas de contenu textuel supplementaire => vrai
     @Test
     void testNoText() {
         assertTrue(isBalanced("({}[])"));
     }
 
-    // B : contenu textuel supplementaire symetrique => vrai
+    // B2 : contenu textuel supplementaire symetrique => vrai
     @Test
     void testSymetricText() {
         assertTrue(isBalanced("(a(b(c)d)e)"));
     }
 
-    // C : contenu textuel supplementaire non symetrique => vrai
+    // B3 : contenu textuel supplementaire non symetrique => vrai
     @Test
     void testNonSymetricText() {
         assertTrue(isBalanced("(a(b(c)))"));
     }
 
     /****Tests Q2 ****/
-    // A : chaine vide => vrai 
+    // B1 : chaine vide => vrai 
     @Test
     void testEmptyString() {
         assertTrue(isBalanced(""));
     }
 
-    // B : une ouverture par fermeture => vrai
+    // B2 : une ouverture par fermeture => vrai
     @Test
     void testOneOpenClose() {
         assertTrue(isBalanced("(()(())())"));
     }
 
-    //C : moins d'une fermeture par ouverture => faux
+    //B3 : moins d'une fermeture par ouverture => faux
     @Test
     void testLessCloseThanOpen() {
         assertFalse(isBalanced("(()(())("));
@@ -51,15 +51,15 @@ class StringUtilsTest {
 
     /****Tests Q3 ****/
 
-    // A => impossible
+    // B1 => impossible
 
-    // B => ordre fermeture/ouverture respecte => vrai
+    // B2 => ordre fermeture/ouverture respecte => vrai
     @Test
     void testOrderRespected() {
         assertTrue(isBalanced("([]{}[{}()])"));
     }
 
-    // C => ordre fermeture/ouverture non respecte => faux
+    // B3 => ordre fermeture/ouverture non respecte => faux
     @Test
     void testOrderNotRespected() {
         assertFalse(isBalanced("([)]"));

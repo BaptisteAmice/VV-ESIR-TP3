@@ -33,18 +33,18 @@ We devided the input space in 3 characteristics and 3 blocks, as follows:
 
 |Characteristics    |   |Blocks |       |       |
 |-------------------|:--|:------|:------|:------|
-|                   |   |a      |b      |c      |
+|                   |   |b1     |b2     |b3      |
 |q1                 | Additional text content |  non   |  symetric   |  asymmetric   |
 |q2                 | Number of closures per opening |  0   |  1   |  <1   |
 |q3                 | Order of closures/order of openings |  NA   |  equivalent   |  different   |
 
-The column A correspond to an absence in the inputs. </br>
-The column B correspond in the simplest correct input cases. </br>
-The column C correspond to a difference between the actual input and the expected input. </br>
+The block B1 correspond to an absence in the inputs. </br>
+The block B2 correspond in the simplest correct input cases. </br>
+The block B3 correspond to a difference between the actual input and the expected input. </br>
  </br>
-Q1 correspond to the presence of text other than parentheses, brackets and braces in the input. </br>
-Q2 correspond to the number of closures per opening. </br>
-Q3 correspond to the order of closures being the same as the order of openings. </br>
+The Q1 characteristic correspond to the presence of text other than parentheses, brackets and braces in the input. </br>
+The Q2 characteristic correspond to the number of closures per opening. </br>
+The Q3 characteristic correspond to the order of closures being the same as the order of openings. </br>
  </br>
 Then we created our tests by following the above table.
 

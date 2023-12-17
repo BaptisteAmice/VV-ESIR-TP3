@@ -14,6 +14,18 @@ class Date implements Comparable<Date> {
         this.month = month;
         this.year = year;
     }
+    
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
 
     private static int daysInMonth(int month, int year) { 
         int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31,
