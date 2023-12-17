@@ -4,8 +4,6 @@ import java.util.Stack;
 
 public class StringUtils {
 
-    private StringUtils() {}
-
     public static boolean isBalanced(String str) {
         Stack<Character> stack = new Stack<>();
         for (char c : str.toCharArray()) {

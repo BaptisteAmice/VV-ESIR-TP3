@@ -81,4 +81,15 @@ class StringUtilsTest {
     void testBranchCoverageBraces() {
         assertFalse(isBalanced("(}"));
     }
+
+
+    /******************** Mutation score ********************/
+
+    @Test
+    void testClassSignatures() {
+        StringUtils stringUtils = new StringUtils();
+        assertTrue(stringUtils.isBalanced("({}[])"));
+    }
+
+
 }
