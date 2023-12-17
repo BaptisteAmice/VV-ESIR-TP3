@@ -345,4 +345,16 @@ class DateTest {
 
     //B6 : NA
 
+
+    
+    /******************** Test coverage ********************/
+
+    // Input Space Partitioningis sufficient to cover all the code
+
+    /******************** Logic test ********************/
+
+    // TOOOOOOOODOOOOOOOOOOOOO
+
+    /******************** Mutation score ********************/
+
 }

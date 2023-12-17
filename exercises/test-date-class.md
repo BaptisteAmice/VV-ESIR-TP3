@@ -94,9 +94,12 @@ This was because we at first forgot to apply the partitionning to every function
 
  3.
  By checking the jacoco report, we can see that the coverage is of 100% for the branches (with 0 missed branches). </br>
- We can conclude that the test are already sufficieent for this criteria. </br>
+ 
+ JCROIS C PAS SUFFISANT
+ AAAAAAAAAAAAAAAAAAAAAAWe can conclude that the test are already sufficieent for this criteria. </br>
 Else, we would have needed to add test for branches in our code with any predicate that uses more than two boolean operators. </br>
- </br>
+ </br> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
  4.
  By using the command `mvn clean install` and `mvn org.pitest:pitest-maven:mutationCoverage`, we can see that our mutation score is of 89% with 39 of 45 mutations killed. </br>
+ A REVOOOIR APRES AVOIR REVU LA PARTIE D AVANT 
