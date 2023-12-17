@@ -86,7 +86,7 @@ class StringUtilsTest {
     /******************** Mutation score ********************/
 
     @Test
-    void testClassSignatures() {
+    void testClassSignature() {
         StringUtils stringUtils = new StringUtils();
         assertTrue(stringUtils.isBalanced("({}[])"));
     }

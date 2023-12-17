@@ -51,7 +51,7 @@ Then we created our tests by following the above table.
 2.
 
 In order to evaluate the statement coverage we added jacoco to the pom.xml file.
-Then we did a mvn install and mvn jacoco:report.
+Then we did a mvn clean install and mvn jacoco:report.
 
 
 In order to evaluate the statement coverage we added jacoco to the pom.xml file.
