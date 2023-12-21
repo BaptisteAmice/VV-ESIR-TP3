@@ -94,12 +94,10 @@ This was because we at first forgot to apply the partitionning to every function
 
  3.
  By checking the jacoco report, we can see that the coverage is of 100% for the branches (with 0 missed branches). </br>
- 
- JCROIS C PAS SUFFISANT
- AAAAAAAAAAAAAAAAAAAAAAWe can conclude that the test are already sufficieent for this criteria. </br>
-Else, we would have needed to add test for branches in our code with any predicate that uses more than two boolean operators. </br>
- </br> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+It shows that we are pretty close to satisfying the Base Choice Coverage. However, we are missing some tests, for example for the isLeap year function wich has a predicate with 3 boolean operators. </br> 
 
  4.
- By using the command `mvn clean install` and `mvn org.pitest:pitest-maven:mutationCoverage`, we can see that our mutation score is of 89% with 39 of 45 mutations killed. </br>
- A REVOOOIR APRES AVOIR REVU LA PARTIE D AVANT 
+ By using the command `mvn clean install` and `mvn org.pitest:pitest-maven:mutationCoverage`, we can see that our mutation score is of 91% with 41 of 45 mutations killed. </br>
+We added boundary tests in the nextDate and previousDate functions in order to cover the missed mutations. </br>
+
+For these functions, ```<``` were replaced by ```<=```, so it was needed to test specific values for the boundary tests. </br>

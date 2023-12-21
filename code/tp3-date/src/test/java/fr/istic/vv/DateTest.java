@@ -43,6 +43,12 @@ class DateTest {
         assertTrue(date1.compareTo(date3) < 0);
     }
 
+    @Test
+    void testNegativeYearIsLeapYear() {
+        assertTrue(Date.isLeapYear(-4));
+        assertFalse(Date.isLeapYear(-3));
+    }
+
     // B2 : value of year == 0 => valid date
     @Test
     void testZeroYear() {
@@ -74,6 +80,11 @@ class DateTest {
         Date date3 = new Date(1, 1, 1);
         assertTrue(date1.compareTo(date2) > 0);
         assertTrue(date1.compareTo(date3) < 0);
+    }
+
+    @Test
+    void testZeroYearIsLeapYear() {
+        assertTrue(Date.isLeapYear(0));
     }
 
     //B3 : valid leap year => valid date
@@ -353,8 +364,53 @@ class DateTest {
 
     /******************** Logic test ********************/
 
-    // TOOOOOOOODOOOOOOOOOOOOO
+    @Test
+    void testBranchCoverageLeapYear() {
+        assertFalse(Date.isLeapYear(2021));
+        assertTrue(Date.isLeapYear(2020));
+        assertFalse(Date.isLeapYear(1900));
+        assertTrue(Date.isLeapYear(2000));
+    }
+
+   
 
     /******************** Mutation score ********************/
+
+    @Test
+    void testNextDayBoundariesDay() {
+        Date date2 = new Date(29, 11, 2021);
+        Date nextDate2 = date2.nextDate();
+        assertEquals(30, nextDate2.getDay());
+        assertEquals(11, nextDate2.getMonth());
+    }
+
+    @Test
+    void testNextDayBoundariesMonth() {
+        Date date1 = new Date(30, 11, 2021);
+        Date nextDate1 = date1.nextDate();
+        assertEquals(1, nextDate1.getDay());
+        assertEquals(12, nextDate1.getMonth());
+        assertEquals(2021, nextDate1.getYear());
+    }
+
+    @Test
+    void testPreviousDayBoundariesDay() {
+        Date date2 = new Date(2, 12, 2021);
+        Date previousDate2 = date2.previousDate();
+        assertEquals(1, previousDate2.getDay());
+        assertEquals(12, previousDate2.getMonth());
+    }
+
+    @Test
+    void testPreviousDayBoundariesMonth() {
+        Date date1 = new Date(1, 2, 2021);
+        Date previousDate1 = date1.previousDate();
+        assertEquals(31, previousDate1.getDay());
+        assertEquals(1, previousDate1.getMonth());
+        assertEquals(2021, previousDate1.getYear());
+    }
+
+
+
 
 }
