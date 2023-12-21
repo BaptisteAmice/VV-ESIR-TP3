@@ -366,9 +366,13 @@ class DateTest {
 
     @Test
     void testBranchCoverageLeapYear() {
+        //not divisible by 4
         assertFalse(Date.isLeapYear(2021));
+        //divisible by 4 and not by 100
         assertTrue(Date.isLeapYear(2020));
+        //divisible by 4 and by 100 but not by 400
         assertFalse(Date.isLeapYear(1900));
+        //divisible by 4 and by 100 and by 400
         assertTrue(Date.isLeapYear(2000));
     }
 
@@ -409,8 +413,4 @@ class DateTest {
         assertEquals(1, previousDate1.getMonth());
         assertEquals(2021, previousDate1.getYear());
     }
-
-
-
-
 }
