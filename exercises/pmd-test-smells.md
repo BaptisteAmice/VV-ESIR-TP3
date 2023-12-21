@@ -51,3 +51,5 @@ C:\Users\PC\Desktop\commons-collections-master\src\test\java\org\apache\commons\
 
 We can see a warning for each test that does not use the `@Test(expected)` annotation.
 A simple fix would be to add the annotation to each test supposed to throw an exception.
+However, when reading the code of the project, we can see that ConcurrentModificationException and NoSuchElementException are not thrown in this test at line 1284 of AbstractCollectionTest but rather catched in order to later test the effect that is has on another ConcurrentModificationException. 
+The fix should still be implemented, but not for the outputed lines.
