@@ -29,3 +29,9 @@ assertEquals(1.2, 3 * .4, 0.0001);
 
 4. The new way of checking expected exceptions is more readable and it's easier to use.
 We don't have to catch exceptions manually anymore in order to check if the test is passing or not.
+
+------------------------------
+------------------------------
+Authors:
+- Baptiste AMICE
+- Ulysse-Néo LARTIGAUD
