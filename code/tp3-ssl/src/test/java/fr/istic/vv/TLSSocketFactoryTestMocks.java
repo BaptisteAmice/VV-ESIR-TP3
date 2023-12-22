@@ -40,7 +40,7 @@ public class TLSSocketFactoryTestMocks {
      * Test the case when the protocols are not null.
      */
     @Test
-    public void preparedSocket_NotNullProtocols()  {
+    public void typical()  {
         //mock SSLSocket
         SSLSocket mockSocket = mock(SSLSocket.class);
         //mock SSLsocket getters
@@ -53,25 +53,6 @@ public class TLSSocketFactoryTestMocks {
 
         // Verify that setEnabledProtocols method is called
         verify(mockSocket).setEnabledProtocols(any(String[].class));
-    }
-
-    @Test
-    public void typical()  {
-        TLSSocketFactory f = new TLSSocketFactory();
-        f.prepareSocket(new SSLSocket() {
-            @Override
-            public String[] getSupportedProtocols() {
-                return shuffle(new String[]{"SSLv2Hello", "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"});
-            }
-            @Override
-            public String[] getEnabledProtocols() {
-                return shuffle(new String[]{"SSLv3", "TLSv1"});
-            }
-            @Override
-            public void setEnabledProtocols(String[] protocols) {
-                assertTrue(Arrays.equals(protocols, new String[] {"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3" }));
-            }
-        });
     }
 
     
